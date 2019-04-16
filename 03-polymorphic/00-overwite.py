@@ -21,7 +21,7 @@ class Human:
 class Superhero(Human):
     # 子类继承基类的所有方法，但方法可以被重写，如增加参数
     def __init__(self, name, movie=False,
-                 superpowers=["super strength", "bulletproofing"]):
+                 superpowers=("super strength", "bulletproofing")):
         # add additional class attributes:
         self.fictional = True
         self.movie = movie
