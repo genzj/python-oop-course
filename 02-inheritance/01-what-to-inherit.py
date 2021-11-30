@@ -9,11 +9,11 @@ class A:
 
     @staticmethod
     def s():
-        print('s')
+        print('static method')
 
     @classmethod
     def c(cls):
-        print('c')
+        print('class method')
 
 
 class B(A):
@@ -22,6 +22,7 @@ class B(A):
 
 print('=' * 20)
 print(f'{B.p=}')
+A.c()
 B.c()
 B.s()
 
