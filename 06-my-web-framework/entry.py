@@ -17,6 +17,11 @@ def wsgiapp(env, start_response):
 
     try:
         resp = getattr(handler(), method)(data)
+    except NotImplementedError:
+        start_response(
+            '405 Method Not Allowed', [('Content-Type', 'application/json')]
+        )
+        resp = f'No such method "{method}"'
     except ValueError as ex:
         start_response(
             '400 Bad Request', [('Content-Type', 'application/json')]

@@ -24,9 +24,6 @@ class CreateOrderRequestModel:
 class OrderHandler(BaseHandler):
     path = '/order'
 
-    def handle(self, method, data):
-        return f'No such method "{method}"'
-
     def post(self, data):
         model = CreateOrderRequestModel.parse(data)
         print(
